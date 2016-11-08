@@ -107,7 +107,13 @@
         <service android:name=".service.SmsReceiverService" />
         <service android:name=".service.ReminderService" />
         <service android:name=".service.SmsMonitorService" />
-
+        <service android:name=".service.smsSenderService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="net.everythingandroid.smspopup.SEND_SMS"></action>
+            </intent-filter>
+        </service>
         <provider
             android:name=".provider.SmsPopupContentProvider"
             android:authorities="net.everythingandroid.smspopup.provider"
